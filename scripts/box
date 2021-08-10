@@ -566,7 +566,6 @@ case "$1" in
             exit 1
         fi
         _cli "$@"
-        # Tests should be ran on non-stables: Test app installed correctly
         ;;
     "remove" | "rm")
         if [[ -z $2 ]]; then
@@ -574,7 +573,6 @@ case "$1" in
             exit 1
         fi
         _clr "$@"
-        # Tests should be ran on non-stables: Check removes didn't bork anything else
         ;;
     "adduser")
         if [[ -n $4 ]]; then
@@ -582,7 +580,6 @@ case "$1" in
             exit 1
         fi
         _adduser "$@"
-        # Tests should be ran on non-stables: this hits many installer scripts
         ;;
     "deluser")
         if [[ -z $2 ]]; then
@@ -594,7 +591,6 @@ case "$1" in
             exit 1
         fi
         _deluser "$@"
-        # Tests should be ran on non-stables: Lot of custom logic in box that needs to be tested
         ;;
     "chpasswd")
         if [[ -z $2 ]]; then
@@ -606,7 +602,6 @@ case "$1" in
             exit 1
         fi
         _chpasswd "$@"
-        # Tests should be ran on non-stables: Password changers are super prone to messing things up
         ;;
     "rmgrsec")
         _nukeovh
@@ -618,7 +613,6 @@ case "$1" in
         ;;
     "update")
         _update "$2"
-        # Tests should be ran on non-stables: Ensure apps installed right
         ;;
     "upgrade")
         if [[ $2 = "--dev" ]]; then
